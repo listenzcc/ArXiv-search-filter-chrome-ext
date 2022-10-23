@@ -1,0 +1,26 @@
+{
+    "author": "CC",
+    "description": "ArXivExt Project 1",
+    "icons": {
+        "48": "src/icons/icon.png",
+        "96": "src/icons/icon.png"
+    },
+    "manifest_version": 3,
+    "name": "myEdgeExt",
+    "version": "1.0",
+    "permissions": ["tabs"],
+    "action": {
+        "default_icon": {
+            "30": "src/icons/icon.png"
+        },
+        "default_title": "myArXivExt",
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "matches": ["https://arxiv.org/search/*"],
+            "js": ["src/js/d3.min.js", "addon.js"]
+        }
+    ]
+}
